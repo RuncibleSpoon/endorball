@@ -1,0 +1,39 @@
+# Session Transcript: Endor Labs Magic 8-Ball Project
+
+## 1. Security Setup
+- Created `GEMINI.md` in `m8ball` with Endor Labs security mandates.
+- Mandate 1: Pre-installation check for all dependencies (`check_dependency_for_risks`, `check_dependency_for_vulnerabilities`).
+- Mandate 2: Continuous scanning after code changes (`scan`).
+- Copied `GEMINI.md` to the `endorball` project directory.
+
+## 2. Project Initialization
+- Initialized a React project using Vite in the `endorball` directory.
+- Configured local Git repository and added a placeholder remote to enable Endor Labs functionality.
+- Performed initial Endor Labs scan.
+- Found a HIGH severity vulnerability (`GHSA-7h2j-956f-4vf2`) in transitive dependency `brace-expansion`.
+
+## 3. Vulnerability Remediation
+- Pinning: Updated `package.json` to use exact versions for all direct dependencies.
+- Fix: Applied an `npm override` for `brace-expansion` to use the secured `@isaacs/brace-expansion@^5.0.1` fork.
+- Validation: Verified fix with a follow-up Endor Labs scan (High severity vulnerability resolved).
+
+## 4. Application Implementation
+- Created a Magic 8-Ball application.
+- Configured Vite to run on port 6000 (later changed to 8080).
+- Implemented core logic in `App.jsx` with 20 standard responses.
+- Styled the ball with CSS gradients and radial shadows.
+- Verified changes with mandatory security scans.
+
+## 5. Deployment
+- Created a new public GitHub repository: `https://github.com/RuncibleSpoon/endorball`.
+- Pushed the finalized code and security configurations to the `main` branch.
+
+## 6. UI/UX Enhancements
+- Font: Integrated 'Space Grotesk' via Google Fonts.
+- Layout: Centered all elements vertically and horizontally.
+- Logic: Added categorized response shapes/colors:
+    - Positive: Green Triangle.
+    - Negative: Red Inverted Triangle.
+    - Neutral: Purple Circle.
+- Animation: Enhanced the shaking effect with rotational jitter.
+- Security: Final scan confirmed no regressions or secrets introduced.

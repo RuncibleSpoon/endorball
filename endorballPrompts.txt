@@ -1,0 +1,13 @@
+USER: generate a good set of secuirty defaults to include in a GEMINI.MD for a simple javascript web app. Include instructions to scan with the endor-labs mcp server scan tool for code changes and to dever run an npm install on a package before checking it with the endor-labs
+USER: copy the GEMINI.md file to the endorball directory as we will start a new project there
+USER: change to the endorball directory and initialize a new project
+USER: confirm what you will do again including any instructions from the GEMINI.md file
+USER: yes
+USER: stop the server
+USER: attempt the task again, but do not attempt to start a react server
+USER: fix the high severity vulnerability
+USER: create a simple magic 8-ball application that returns answers when the ball is clicked. Use a green background. Run the server on local port 6000
+USER: restart the server on port 8080
+USER: this looks like a good start. Greate a public github repo for this called endorball on my github account. Push the code
+USER: update the application with the following changes: 1. Center the text and ball. 2. Change the color and shape of the object behind the response text to be green for a positive, red for a negative, and purple for other responses 3. animate the ball to shake when it's clicked 4. Cahge the fonts used to "Space Grotesk".
+USER: dump the entire output of this session into a file called ~/endorball.txt and just my prompts into ~/endorballPrompts.txt

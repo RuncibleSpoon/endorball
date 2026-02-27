@@ -5,6 +5,18 @@
   justify-content: center;
 }
 
+.title {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: white;
+  margin-top: 30px;
+  font-size: 1.2em;
+}
+
 .magic-8-ball {
   width: 300px;
   height: 300px;
@@ -27,10 +39,10 @@
 }
 
 @keyframes shake {
-  10%, 90% { transform: translate3d(-1px, 0, 0); }
-  20%, 80% { transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-  40%, 60% { transform: translate3d(4px, 0, 0); }
+  10%, 90% { transform: translate3d(-2px, 0, 0) rotate(-2deg); }
+  20%, 80% { transform: translate3d(4px, 0, 0) rotate(2deg); }
+  30%, 50%, 70% { transform: translate3d(-6px, 0, 0) rotate(-4deg); }
+  40%, 60% { transform: translate3d(6px, 0, 0) rotate(4deg); }
 }
 
 .magic-8-ball-window {
@@ -56,33 +68,46 @@
   align-items: center;
   justify-content: center;
   font-size: 60px;
-  font-family: sans-serif;
   font-weight: bold;
 }
 
-.magic-8-ball-triangle {
-  width: 0;
-  height: 0;
-  border-left: 55px solid transparent;
-  border-right: 55px solid transparent;
-  border-top: 95.26px solid #1a1aff; /* Equilateral triangle */
+.magic-8-ball-shape {
   position: absolute;
-  top: 15px; /* Adjust to center vertically */
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Positive: Green Triangle (pointing up) */
+.magic-8-ball-shape-positive {
+  background-color: #28a745; /* green */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  padding-top: 30px; /* offset to center text in triangle */
+}
+
+/* Negative: Red Triangle (pointing down) */
+.magic-8-ball-shape-negative {
+  background-color: #dc3545; /* red */
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  padding-bottom: 30px; /* offset to center text in triangle */
+}
+
+/* Neutral: Purple Circle */
+.magic-8-ball-shape-neutral {
+  background-color: #6f42c1; /* purple */
+  border-radius: 50%;
 }
 
 .magic-8-ball-answer {
-  position: absolute;
-  top: -70px;
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 500;
   text-align: center;
   width: 70px;
   line-height: 1.2;
-  font-family: sans-serif;
   text-transform: uppercase;
-  text-shadow: 0 0 5px rgba(255,255,255,0.5);
-  margin-left: -35px; /* Half of width to center */
+  text-shadow: 0 0 5px rgba(255,255,255,0.3);
 }
